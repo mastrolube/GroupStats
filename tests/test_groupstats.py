@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication
 import mock
 from mock import call
 from io import TextIOBase
-from groupstats import GroupStats
+from GroupStats.groupstats import GroupStats
 from PyQt5.QtCore import Qt
 
 class TestGroupStats(object):

@@ -50,8 +50,8 @@ class GroupStats:
                     self.translator = QTranslator()
                     self.translator.load(localePath)
                     QCoreApplication.installTranslator(self.translator)
-        # Create the dialog and keep reference
-        self.dlg = GroupStatsDialog()
+        self.dlg = None
+
 
 
     def initGui(self):    
@@ -71,6 +71,10 @@ class GroupStats:
 
     # run method that performs all the real work
     def run(self):
+        if self.dlg is None:
+            # Create the dialog and keep reference
+            self.dlg = GroupStatsDialog()
+
         mapLayers = QgsProject.instance().mapLayers()        # Load layers dictionary from the project
         layerList = []
         for id in mapLayers.keys():                                   # Loading layer names into the window

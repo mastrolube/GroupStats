@@ -8,7 +8,7 @@ about=
 
  Migrato alla versione QGIS3 da Faunalia per Arpa Piemonte per il programma ERIKUS in collaborazione con Regione Piemonte e Dipartimento della Protezione Civile - Funzione Censimento Danni
 
-version=2.2.2
+version=2.2.3
 qgisMinimumVersion=3.0
 
 # tags are comma separated with spaces allowed
@@ -29,6 +29,7 @@ author=Rajmund Szostok. Migrated to QGIS 3 by Borys Jurgiel and Faunalia. Code t
 email=henrik.spangmyr@midvatten.se
 
 changelog=
+    2.2.3    Fixes bug where selectAll gave python error.
     2.2.2    Plugin ownership transferred to HenrikSpa
     2.2.1    Adds support for all numeric fields where QgsField.isNumeric() is True. Patch by HenrikSpa.
     2.2.0    Code translated into English, tests added. Great work by HenrikSpa.

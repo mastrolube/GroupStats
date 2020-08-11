@@ -698,7 +698,7 @@ class ModelRowsColumns(ModelList):
             dataWKiW = self.modelWiK+self.valueModel
 
             if typ=='calculations' and typ in [x[0] for x in dataWKiW] and dataType == 'application/x-groupstats-polaL':
-                self.mainWindow.statusBar().showMessage(QCoreApplication.translate('GroupStats','Function can be droped in only one area'),15000)
+                self.mainWindow.statusBar().showMessage(QCoreApplication.translate('GroupStats','Function can be dropped in only one area'),15000)
                 return False
             elif (field in self.modelWiK or field in self._data) and dataType in ['application/x-groupstats-polaL', 'application/x-groupstats-polaW']:
                 self.mainWindow.statusBar().showMessage(QCoreApplication.translate('GroupStats','This field has already been droped'),15000)
@@ -996,12 +996,10 @@ class WindowResults(QTableView):
 
     def __init__(self, parent=None):
         super(WindowResults, self).__init__(parent)
-
         self.setSortingEnabled(True)
         self.setObjectName("result")
         self.verticalHeader().setSortIndicatorShown(True)
-
-        self.clicked.connect(self.selectAll)
+        self.clicked.connect(self._selectAll)
 
 
     def selectionCommand(self, index, event=None):
@@ -1018,7 +1016,7 @@ class WindowResults(QTableView):
             return flag
 
 
-    def selectAll(self, index):
+    def _selectAll(self, index):
         """
         Select or deselect all data when clicked in the corner of the table
         """
@@ -1027,7 +1025,7 @@ class WindowResults(QTableView):
             if self.selectionModel().isSelected(index):                        # if the corner is selected, it also marks all dataa
                 self.selectAll()
             else:
-                self.clearSelection ()                                          # deselects all data
+                self.clearSelection()                                          # deselects all data
 
 
 class Calculations(QObject):                   # finished
