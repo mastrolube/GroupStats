@@ -10,7 +10,7 @@ from math import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox, QTableView, QWidget
+from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox, QTableView, QWidget, QMenu, QAction
 
 from qgis.core import *
 from qgis.gui import *
@@ -520,6 +520,11 @@ class GroupStatsDialog(QMainWindow):
         else:
             return data, True
 
+    def copyCellContent(self, selectedCell):
+        "Copy cell value to clipboard"
+        clipboard = QApplication.clipboard()
+        clipboard.setText(selectedCell)
+
     # ------------------------ COPYING DATA TO THE CLIPBOARD AND SAVING CSV ------------------ ---------- END
 
 
@@ -989,7 +994,7 @@ class ResultModel(QAbstractTableModel):     # finished
         self.dataChanged.emit(topLeft, bottomRight)
 
 
-class WindowResults(QTableView):
+class WindowResults(QTableView, QMenu):
     """
     Window with calculation results
     """
@@ -1001,6 +1006,20 @@ class WindowResults(QTableView):
         self.verticalHeader().setSortIndicatorShown(True)
         self.clicked.connect(self._selectAll)
 
+    def contextMenuEvent(self, event):
+        """
+        Right click in the results table
+        """
+        self.menu = QMenu(self)
+        copyCellContentAction = QAction('Copy cell content', self)
+        selectionIndex = self.indexAt(event.pos())                                       # Get the index at the position of the right click event
+        if selectionIndex.row() in [0, -1] or selectionIndex.column() in [0, -1]:             # Don't do anyting if row or column header is clicked
+            return
+        selectedCell = str(self.indexAt(event.pos()).data())                        # Get the content of the cell on right click
+        copyCellContentAction.triggered.connect(lambda: GroupStatsDialog().copyCellContent(selectedCell))
+        self.menu.addAction(copyCellContentAction)
+        self.selectionModel().select(selectionIndex, QItemSelectionModel.ClearAndSelect)        # Clear any selection in the table and select the single cell that has been clicked
+        self.menu.popup(QCursor.pos())
 
     def selectionCommand(self, index, event=None):
         """
