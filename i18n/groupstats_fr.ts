@@ -3,47 +3,47 @@
 <context>
     <name>Calculations</name>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1048"/>
+        <location filename="../GroupStatsDialog.py" line="1065"/>
         <source>count</source>
         <translation>compter</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1049"/>
+        <location filename="../GroupStatsDialog.py" line="1066"/>
         <source>sum</source>
         <translation>somme</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1050"/>
+        <location filename="../GroupStatsDialog.py" line="1067"/>
         <source>average</source>
         <translation>moyenne</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1051"/>
+        <location filename="../GroupStatsDialog.py" line="1068"/>
         <source>variance</source>
         <translation>variance</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1052"/>
+        <location filename="../GroupStatsDialog.py" line="1069"/>
         <source>stand.dev.</source>
         <translation>dev. stand.</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1053"/>
+        <location filename="../GroupStatsDialog.py" line="1070"/>
         <source>median</source>
         <translation>médiane</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1054"/>
+        <location filename="../GroupStatsDialog.py" line="1071"/>
         <source>min</source>
         <translation>minimum</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1055"/>
+        <location filename="../GroupStatsDialog.py" line="1072"/>
         <source>max</source>
         <translation>maximum</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="1056"/>
+        <location filename="../GroupStatsDialog.py" line="1073"/>
         <source>unique</source>
         <translation>valeur unique</translation>
     </message>
@@ -56,7 +56,7 @@
         <translation>Information</translation>
     </message>
     <message>
-        <location filename="../groupstats.py" line="81"/>
+        <location filename="../groupstats.py" line="85"/>
         <source>Vector layers not found</source>
         <translation>Aucun vecteur trouve</translation>
     </message>
@@ -106,24 +106,29 @@
         <translation>Aucune donnée à sauvegarder/copier</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="765"/>
+        <location filename="../GroupStatsDialog.py" line="770"/>
         <source>Function can be droped in only one area</source>
         <translation>Une fonction peut être inséré dans une seule zone</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="709"/>
+        <location filename="../GroupStatsDialog.py" line="714"/>
         <source>This field has already been droped</source>
         <translation>Ce champ a déjà été utilisé</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="762"/>
+        <location filename="../GroupStatsDialog.py" line="767"/>
         <source>Area &apos;Value&apos; may contain a maximum of two entries</source>
         <translation>L&apos;espace &apos;Valeur&apos; ne peut contenir plus de deux éléments</translation>
     </message>
     <message>
-        <location filename="../GroupStatsDialog.py" line="768"/>
+        <location filename="../GroupStatsDialog.py" line="773"/>
         <source>In the area &apos;Value&apos; one of the items must be a function</source>
         <translation>Dans l&apos;espace &apos;Valeur&apos; l&apos;un des éléments doit être une fonction</translation>
+    </message>
+    <message>
+        <location filename="../GroupStatsDialog.py" line="711"/>
+        <source>Function can be dropped in only one area</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -172,7 +177,7 @@
         <translation>Couches</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="123"/>
+        <location filename="../ui_groupstats.ui" line="126"/>
         <source>Fields</source>
         <translation>Champs</translation>
     </message>
@@ -183,7 +188,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Drag field and drop it into &apos;Columns&apos;, &apos;Rows&apos; or &apos;Value&apos; area.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -197,7 +202,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Drop numerical attribute or geometry for calculations.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Drop function &lt;/span&gt;&lt;a name=&quot;result_box&quot;&gt;&lt;/a&gt;if it is not in the rows/columns area.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -205,7 +210,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Placer une function &lt;/span&gt;&lt;a name=&quot;result_box&quot;&gt;&lt;/a&gt;si non présente dans l&apos;espace Ligne/Colonne.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="203"/>
+        <location filename="../ui_groupstats.ui" line="332"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -218,7 +223,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Placer les attributs et/ou fonctions pour les colonnes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="232"/>
+        <location filename="../ui_groupstats.ui" line="374"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -231,27 +236,27 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Placer les attributs et/ou fonctions pour les lignes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="255"/>
+        <location filename="../ui_groupstats.ui" line="170"/>
         <source>Columns</source>
         <translation>Colonnes</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="268"/>
+        <location filename="../ui_groupstats.ui" line="355"/>
         <source>Rows</source>
         <translation>Lignes</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="309"/>
+        <location filename="../ui_groupstats.ui" line="255"/>
         <source>Filter</source>
         <translation>Filtre</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="324"/>
+        <location filename="../ui_groupstats.ui" line="216"/>
         <source>Value</source>
         <translation>Valeurs</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="337"/>
+        <location filename="../ui_groupstats.ui" line="229"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -266,64 +271,99 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="345"/>
+        <location filename="../ui_groupstats.ui" line="237"/>
         <source>use NULL values</source>
         <translation>Utiliser les valeurs NULL</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="372"/>
+        <location filename="../ui_groupstats.ui" line="406"/>
         <source>Use only selected features</source>
         <translation>Utiliser uniquement les entités sélectionnées</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="401"/>
+        <location filename="../ui_groupstats.ui" line="435"/>
         <source>Clear</source>
         <translation>Effacer</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="419"/>
+        <location filename="../ui_groupstats.ui" line="459"/>
         <source>Calculate</source>
         <translation>Calculer</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="428"/>
+        <location filename="../ui_groupstats.ui" line="468"/>
         <source>&amp;Copy all to clipboard</source>
         <translation>&amp;Copier dans le presse papier</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="436"/>
+        <location filename="../ui_groupstats.ui" line="476"/>
         <source>&amp;Save all to CSV file</source>
         <translation>&amp;Enregistrer en fichier CSV</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="441"/>
+        <location filename="../ui_groupstats.ui" line="481"/>
         <source>&amp;Show Control panel</source>
         <translation>&amp;Montrer le panneau de contrôle</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="449"/>
+        <location filename="../ui_groupstats.ui" line="489"/>
         <source>Copy selected &amp;to clipboard</source>
         <translation>Copier la &amp;selection dans le presse papiers</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="457"/>
+        <location filename="../ui_groupstats.ui" line="497"/>
         <source>Save selected to CSV &amp;file</source>
         <translation>Enregistrer la sélection en &amp;fichier CSV</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="465"/>
+        <location filename="../ui_groupstats.ui" line="505"/>
         <source>&amp;Show selected on map</source>
         <translation>M&amp;ontrer la selection sur la carte</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="470"/>
+        <location filename="../ui_groupstats.ui" line="510"/>
         <source>&amp;Tutorial</source>
         <translation>&amp;Tutoriel</translation>
     </message>
     <message>
-        <location filename="../ui_groupstats.ui" line="478"/>
+        <location filename="../ui_groupstats.ui" line="518"/>
         <source>&amp;Join selected features</source>
         <translation>&amp;Unir les géométries sélectionnées</translation>
+    </message>
+    <message>
+        <location filename="../ui_groupstats.ui" line="113"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select Layer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_groupstats.ui" line="145"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt;&quot;&gt;Drag field and drop it into &apos;Columns&apos;, &apos;Rows&apos; or &apos;Value&apos; area.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_groupstats.ui" line="189"/>
+        <source>[Optional] Filter layer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_groupstats.ui" line="277"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt;&quot;&gt;[Mandatory] &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt;&quot;&gt;1) Drop numerical attribute or geometry for calculations. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Tahoma&apos;; font-size:8.25pt;&quot;&gt;2) Drop function.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_groupstats.ui" line="453"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fill Value box to enable computation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
