@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="it_IT" sourcelanguage="en_US">
+<!DOCTYPE TS>
+<TS version="2.1" language="it_IT" sourcelanguage="en_US">
 <context>
     <name>Calculations</name>
     <message>
@@ -103,7 +104,7 @@
     <message>
         <location filename="../GroupStatsDialog.py" line="486"/>
         <source>No data to save/copy</source>
-        <translation>Nessun data da salvare/copiare</translation>
+        <translation>Nessun dato da salvare/copiare</translation>
     </message>
     <message>
         <location filename="../GroupStatsDialog.py" line="770"/>
@@ -128,7 +129,7 @@
     <message>
         <location filename="../GroupStatsDialog.py" line="711"/>
         <source>Function can be dropped in only one area</source>
-        <translation type="unfinished"></translation>
+        <translation>Puoi trascinare la funzione in una sola area</translation>
     </message>
 </context>
 <context>
@@ -333,7 +334,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui_groupstats.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select Layer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Seleziona layer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui_groupstats.ui" line="145"/>
@@ -347,7 +348,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui_groupstats.ui" line="189"/>
         <source>[Optional] Filter layer</source>
-        <translation type="unfinished"></translation>
+        <translation>[Opzionale] Filtra layer</translation>
     </message>
     <message>
         <location filename="../ui_groupstats.ui" line="277"/>
@@ -363,7 +364,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui_groupstats.ui" line="453"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fill Value box to enable computation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Riempi i riquadri per calcolare i valori&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
