@@ -126,12 +126,11 @@ class GroupStatsDialog(QMainWindow):
         layerId = self.ui.layer.itemData(index)
         layer = QgsProject.instance().mapLayer(layerId)#.toString())
 
-        provider = layer.dataProvider()
         request = QgsFeatureRequest()
         _filter = self.ui._filter.toPlainText()
         if _filter:
             request.setFilterExpression(_filter)
-        iterator = provider.getFeatures(request)
+        iterator = layer.getFeatures(request)
 
         if self.ui.onlySelected.isChecked():                                         # Retrieve the IDs of the selected _objects
             selectedObjects = layer.selectedFeatureIds()
@@ -142,7 +141,7 @@ class GroupStatsDialog(QMainWindow):
 
         result = {}                                                                         # results translator {((row) (column)): [[values], [indexes]}
         f=QgsFeature()                                                                      # Searching for calculation data
-        numberOfObjects = provider.featureCount()
+        numberOfObjects = layer.featureCount()
         if numberOfObjects != 0:
             percent = 100.00 / numberOfObjects                                                   # Number of _objects
         else:
@@ -247,8 +246,8 @@ class GroupStatsDialog(QMainWindow):
                     data[nrw][nrk] = [self.calculations.list[y][1](result[x][0]), result[x][1]]                         # insert result if calculations with values
 
         atr = {}                                                                            # Attributes as dict.
-        for i in range(provider.fields().count()):
-            atr[i] = provider.fields().at(i)
+        for i in range(layer.fields().count()):
+            atr[i] = layer.fields().at(i)
         rowNames=[]                                                                     # List with names of rows
         for x in chosenRows:
             if x[0]=='geometry':
@@ -353,8 +352,7 @@ class GroupStatsDialog(QMainWindow):
 
         idW = self.ui.layer.itemData(index)                          # Get the ID of the selected layer
         layer = QgsProject.instance().mapLayer(idW)#.toString())
-        provider = layer.dataProvider()
-        fields = provider.fields()
+        fields = layer.fields()
 
         dictionary = {}
         if layer.geometryType() in (QgsWkbTypes.PointGeometry, QgsWkbTypes.NullGeometry):

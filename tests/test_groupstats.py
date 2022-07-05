@@ -9,16 +9,16 @@ from PyQt5.QtCore import Qt
 
 class TestGroupStats(object):
     """
+    This fix was not needed anymore, but I'm leaving the instructions for future needs (HS 2022-07-05):
+
     The tests only works with nose by changing the rows in groupstats.py from:
 
     from . import resources_rc
-
     from .GroupStatsDialog import GroupStatsDialog
 
     to
 
     #from . import resources_rc   <-- Skip the import
-
     from GroupStatsDialog import GroupStatsDialog <-- Remove the .
     """
 
