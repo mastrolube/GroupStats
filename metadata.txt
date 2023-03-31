@@ -30,7 +30,7 @@ email=henrik.spangmyr@midvatten.se
 
 changelog=
     2.2.7    Fixes bug when "Show selected on map" isn't working (fixes #13) (patch by TurboGraphxBeige).
-             Fixes bug where reported calculation progress exceeded 100%.
+             Fixes bug where reported calculation progress exceeded 100 percent.
              Fixes sorting bug for fields with mixed strings and floats (fixes #12).
              Adjusted sort to put None, '' and NaN-values last.
     2.2.6    Added support for virtual fields (fixes #10)
