@@ -4,6 +4,8 @@ import csv
 import os
 import pickle
 import sys
+import traceback
+import math
 import webbrowser
 from math import *
 
@@ -141,16 +143,12 @@ class GroupStatsDialog(QMainWindow):
 
         result = {}                                                                         # results translator {((row) (column)): [[values], [indexes]}
         f=QgsFeature()                                                                      # Searching for calculation data
-        numberOfObjects = layer.featureCount()
-        if numberOfObjects != 0:
-            percent = 100.00 / numberOfObjects                                                   # Number of _objects
-        else:
-            percent = 100
-        counter = 0.0
+        numberOfObjects = len([1 for f in layer.getFeatures(request)
+                               if not onlySelected or f.id() in selectedObjects])
+        counter = 0
         NULLcounter = 0
         while iterator.nextFeature(f):                                                      # for each object ...
             if onlySelected==False or (onlySelected and (f.id() in selectedObjects)):
-
                 key_column = []                                                                  # key column (column1, column2...)
                 key_row = []                                                                  # key row (rows1, rows2...)
                 key = ()
@@ -198,8 +196,8 @@ class GroupStatsDialog(QMainWindow):
                 else:
                     NULLcounter += 1
 
-                counter = counter + percent
-                self.statusBar().showMessage(QCoreApplication.translate('GroupStats','Calculate... ') + '%.0f%%' % (counter))         # Displaying progress
+                counter += 1
+                self.statusBar().showMessage(QCoreApplication.translate('GroupStats','Calculate... ') + '%.0f%%' % ((float(counter)/float(numberOfObjects))*100))         # Displaying progress
 
         self.statusBar().showMessage(self.statusBar().currentMessage() + ' |  ' + QCoreApplication.translate('GroupStats','generate view...'))
 
@@ -915,20 +913,20 @@ class ResultModel(QAbstractTableModel):     # finished
         if column >= self.offsetX:                                             # Selecting data to sort
             # n-line number before storting, d-data in line
             try:
-                tmp.extend([(n, float(d[column - self.offsetX][0])) for n, d in enumerate(self._data)])
+                tmp.extend([(n, (float('nan') if not str(d[column - self.offsetX][0]).strip()
+                                 else float(d[column - self.offsetX][0]))) for n, d in enumerate(self._data)])
             except (ValueError, TypeError):
                 tmp.extend([(n, str(d[column - self.offsetX][0])) for n, d in enumerate(self._data)])
         else:                                                                   # or line names
             # Either convert all values or none to float for sorting
             # n-row number before storting, d-row description
             try:
-                tmp.extend([(n, float(d[column])) for n, d in enumerate(self.rows[1:])])
+                tmp.extend([(n, (float('nan') if not str(d[column]).strip()
+                                 else float(d[column]))) for n, d in enumerate(self.rows[1:])])
             except (ValueError, TypeError):
-                tmp.extend([(n, d[column]) for n, d in enumerate(self.rows[1:])])
+                tmp.extend([(n, str(d[column])) for n, d in enumerate(self.rows[1:])])
 
-        tmp.sort(key=lambda x: x[1])                                            # ascending sorting
-        if mode==1:                                                             # descending sorting
-            tmp.reverse()
+        tmp = sort_values_nulls_last(tmp, mode)
 
         data2 = tuple(self._data)                                                # A temporary tuple with all the data
         self._data=[]
@@ -958,24 +956,20 @@ class ResultModel(QAbstractTableModel):     # finished
         if row >= self.offsetY:                                              # Selecting data to sort
             # Either convert all values or none to float for sorting
             try:
-                tmp.extend([(n, float(d[0])) for n, d in enumerate(self._data[row - self.offsetY])])
+                tmp.extend([(n, (float('nan') if not str(d[0]).strip() else float(d[0]))) for n, d in enumerate(self._data[row - self.offsetY])])
             except (ValueError, TypeError):
                 tmp.extend([(n, str(d[0])) for n, d in enumerate(self._data[row - self.offsetY])])    # n-column number before storting, d-data in the column
         else:                                                                   # or column names
             # Either convert all values or none to float for sorting
             try:
-                tmp.extend([(n, float(d[row])) for n, d in enumerate(self.columns[1:])])
+                tmp.extend([(n, (float('nan') if not str(d[row]).strip() else float(d[row]))) for n, d in enumerate(self.columns[1:])])
             except (ValueError, TypeError):
                 tmp.extend([(n, str(d[row])) for n, d in enumerate(self.columns[1:])])
             except IndexError:
                 # The table can't be sorted using this column. It's probably the row header columnn
                 return
 
-
-        tmp.sort(key=lambda x: x[1])                                    # ascending sorting
-
-        if mode==1:                                                             # descending sorting
-            tmp.reverse()
+        tmp = sort_values_nulls_last(tmp, mode)
 
         data2 = tuple(self._data)                                                # A temporary tuple with all the data
         self._data=[]
@@ -994,6 +988,17 @@ class ResultModel(QAbstractTableModel):     # finished
         topLeft = self.createIndex(0,0)                                         # Signal change data
         bottomRight = self.createIndex(self.rowCount(), self.columnCount())
         self.dataChanged.emit(topLeft, bottomRight)
+
+
+def sort_values_nulls_last(alist, rev):
+    contains_values = [x for x in alist
+                       if str(x[1]).strip()
+                       and x[1] is not None
+                       and (not isinstance(x[1], float) or not math.isnan(x[1]))]
+    contains_values = list(sorted(contains_values, key=lambda x: x[1], reverse=True if rev == 1 else False))
+    values_idx = [x[0] for x in contains_values]
+    contains_values.extend([x for x in alist if x[0] not in values_idx])
+    return contains_values
 
 
 class WindowResults(QTableView, QMenu):
