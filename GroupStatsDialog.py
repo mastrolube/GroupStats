@@ -537,10 +537,14 @@ class GroupStatsDialog(QMainWindow):
             for j in lista:
                 idList.append(j)    #w 1 było idList.append(j.toInt()[0])
 
-        self.tm5.layer.selectByIds(idList)                                           #   selecting them on the map
-        self.iface.mapCanvas().zoomToSelected(self.tm5.layer)                         #   zoom to selected objects
-        if len(idList)==1 and self.tm5.layer.geometryType()==0:                      #      if the layer is point and there is only one object in the group ..
-            self.iface.mapCanvas().zoomScale(1000)                                      #      set the scale to 1: 1000
+        try:
+            self.tm5.layer.selectByIds(idList)                                          #   selecting them on the map
+        except AttributeError:
+            QMessageBox.information(None,QCoreApplication.translate('GroupStats','Information'),QCoreApplication.translate('GroupStats','No data selected'))
+        else:                                                  
+            self.iface.mapCanvas().zoomToSelected(self.tm5.layer)                         #   zoom to selected objects
+            if len(idList)==1 and self.tm5.layer.geometryType()==0:                      #      if the layer is point and there is only one object in the group ..
+                self.iface.mapCanvas().zoomScale(1000)                                      #      set the scale to 1: 1000
 
 
 class ModelList(QAbstractListModel):
@@ -1024,7 +1028,9 @@ class WindowResults(QTableView, QMenu):
         Implementation of the original method - adds selection of entire rows and columns when the table header is selected
         """
         flag = super(WindowResults, self).selectionCommand(index, event)        # calling the original method
-        test = self.model().data(index, Qt.UserRole+1)                         # checking the selected cell type
+        test = None        
+        if self.model():
+            test = self.model().data(index, Qt.UserRole+1)                         # checking the selected cell type
         if test == "row":
             return flag | QItemSelectionModel.Rows
         elif test == "column":
