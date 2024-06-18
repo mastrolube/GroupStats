@@ -228,9 +228,9 @@ class GroupStatsDialog(QMainWindow):
                 ) in chosenColumns:  # for each chosen column we check the column type
                     if k[0] == "geometry":  # and create the key column
                         if k[2] == 1:
-                            key_column.append(f.geometry().length())
+                            key_column.append(self.calculate_geod_length(f.geometry()))
                         elif k[2] == 2:
-                            key_column.append(f.geometry().area())
+                            key_column.append(self.calculate_geod_area(f.geometry()))
                     elif k[0] in ["attributeTxt", "countAttributes"]:
                         newKeyColumns = (
                             "" if f.attribute(k[1]) is None else f.attribute(k[1])
@@ -239,9 +239,9 @@ class GroupStatsDialog(QMainWindow):
                 for k in chosenRows:  # for each chosen rows we check the rows type
                     if k[0] == "geometry":  # and create key rows
                         if k[2] == 1:
-                            key_row.append(f.geometry().length())
+                            key_row.append(self.calculate_geod_length(f.geometry()))
                         elif k[2] == 2:
-                            key_row.append(f.geometry().area())
+                            key_row.append(self.calculate_geod_area(f.geometry()))
                     elif k[0] in ["attributeTxt", "countAttributes"]:
                         newRowKey = (
                             "" if f.attribute(k[1]) is None else f.attribute(k[1])
